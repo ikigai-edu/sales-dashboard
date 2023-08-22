@@ -63,7 +63,7 @@ else:
 
     # SALES BY PRODUCT LINE [BAR CHART]
     sales_by_product_line = (
-        df_selection.groupby(by=["Product line"]).sum()[["Total"]].sort_values(by="Total")
+        df_selection.groupby(by=["Product line"]).sum(numeric_only=True)[["Total"]].sort_values(by="Total")
     )
 
     left_column, middle_column, right_column = st.columns(3)
@@ -90,7 +90,7 @@ else:
 
 
     # SALES BY HOUR [BAR CHART]
-    sales_by_hour = df_selection.groupby(by=["hour"]).sum()[["Total"]]
+    sales_by_hour = df_selection.groupby(by=["hour"]).sum(numeric_only=True)[["Total"]]
     fig_hourly_sales = px.bar(
         sales_by_hour,
         x=sales_by_hour.index,
