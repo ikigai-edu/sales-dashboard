@@ -85,7 +85,7 @@ else:
         y=sales_by_product_line.index,
         orientation="h",
         title="<b>Sales by Product Line</b>",
-        #template="plotly_white",
+        template="plotly_white",
     )
 
 
@@ -96,7 +96,7 @@ else:
         x=sales_by_hour.index,
         y="Total",
         title="<b>Sales by hour</b>",
-        #template="plotly_white",
+        template="plotly_white",
     )
 
 
